@@ -25,6 +25,7 @@ public class MyBatisPlusConfiguration {
 
     {
         dynamicTables.put("user", new UserTableNameHandler());
+        dynamicTables.put("emp", new EmpTableNameHandler());
     }
 
     @Bean

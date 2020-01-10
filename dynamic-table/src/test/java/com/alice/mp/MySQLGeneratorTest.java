@@ -27,7 +27,7 @@ public class MySQLGeneratorTest {
     private static final String PASSWORD = "abc123";
     private static final String URL = "jdbc:mysql://192.168.1.115:3306/mp_test_01?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8";
 
-    private static final String[] TABLE_NAME = new String[]{"user"};
+    private static final String[] TABLE_NAME = new String[]{"emp"};
 
     public static String scanner(String tip) {
         Scanner scanner = new Scanner(System.in);
