@@ -1,0 +1,79 @@
+{
+  "collection": false,
+  "getterNames": [
+    "delegate",
+    "boundSql",
+    "parameterHandler"
+  ],
+  "objectFactory": {},
+  "objectWrapper": {
+    "collection": false,
+    "getterNames": [
+      "delegate",
+      "boundSql",
+      "parameterHandler"
+    ],
+    "setterNames": [
+      "delegate"
+    ]
+  },
+  "objectWrapperFactory": {},
+  "originalObject": {
+    "boundSql": {
+      "parameterMappings": [
+        {
+          "javaType": "java.lang.Object",
+          "mode": "IN",
+          "property": "ew.paramNameValuePairs.MPGENVAL1",
+          "typeHandler": {
+            "rawType": "java.lang.Object"
+          }
+        }
+      ],
+      "parameterObject": {
+        "ew": {
+          "customSqlSegment": "WHERE (create_time = #{ew.paramNameValuePairs.MPGENVAL1})",
+          "emptyOfEntity": true,
+          "emptyOfNormal": false,
+          "emptyOfWhere": false,
+          "expression": {
+            "groupBy": [],
+            "having": [],
+            "normal": [
+              {
+                "sqlSegment": "create_time"
+              },
+              "EQ",
+              {
+                "sqlSegment": "#{ew.paramNameValuePairs.MPGENVAL3}"
+              }
+            ],
+            "orderBy": [],
+            "sqlSegment": "(create_time = #{ew.paramNameValuePairs.MPGENVAL1})"
+          },
+          "paramNameValuePairs": {
+            "MPGENVAL3": 1552192532340,
+            "MPGENVAL2": 1552192532340,
+            "MPGENVAL1": 1552192532340
+          },
+          "sqlSegment": "(create_time = #{ew.paramNameValuePairs.MPGENVAL1})"
+        },
+        "param1": {
+          "$ref": "$.originalObject.boundSql.parameterObject.ew"
+        }
+      },
+      "sql": "SELECT  id,code,name,password,title,mobile,email,first_login,status,create_time,update_time  FROM user \n \n WHERE (create_time = ?)"
+    },
+    "parameterHandler": {
+      "parameterObject": {
+        "$ref": "$.originalObject.boundSql.parameterObject"
+      }
+    }
+  },
+  "reflectorFactory": {
+    "classCacheEnabled": true
+  },
+  "setterNames": [
+    "delegate"
+  ]
+}

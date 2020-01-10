@@ -1,11 +1,15 @@
 package com.alice.mp.dao;
 
 import com.alice.mp.DynamicTableApp;
+import com.alice.mp.configuration.UserTableNameHandler;
 import com.alice.mp.entity.User;
 import com.alice.mp.service.UserService;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.DateUtils;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +35,8 @@ public class UserMapperTest {
     private UserService userService;
 
     @Test
-    public void add() {
+    @Ignore
+    public void insert() {
 
         List<User> list = new ArrayList<>();
 
@@ -50,5 +55,13 @@ public class UserMapperTest {
         }
 
 
+    }
+
+
+    @Test
+    public void list() {
+        Date date = DateUtils.addMonths(new Date(), -10);
+        UserTableNameHandler.SUFFIX.set(DateFormatUtils.format(date, "yyyyMM"));
+        List<User> list = userMapper.selectList(null);
     }
 }
