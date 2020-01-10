@@ -33,17 +33,16 @@ public class UserTableNameHandler implements ITableNameHandler {
         String originalObjectStr = JSONObject.toJSONString(metaObject.getOriginalObject());
         // 获取请求参数
         JSONObject parameterObject = JSONObject.parseObject(originalObjectStr).getJSONObject("boundSql").getJSONObject("parameterObject");
-
         // 通过创建日期来处理
-
         Date date = parameterObject.getDate("createTime");
         String suffix = DateFormatUtils.format(date, "yyyyMM");
+        // 根据注册时时间来，进行数据分片
         // 如果我们的库中存在该表，则选择该表，如果不存在，则存入默认兜底表
+        log.info("tableName={},suffix={}", tableName, suffix);
         if (exits.contains(suffix)) {
             tableName = tableName + "_" + suffix;
         }
-        
-        log.info(tableName);
+
         return tableName;
     }
 }
