@@ -5,6 +5,7 @@
     <modules>
         <module>curd-demo</module>
         <module>generator-demo</module>
+        <module>dynamic-table</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

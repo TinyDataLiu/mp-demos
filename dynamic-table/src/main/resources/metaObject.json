@@ -1,0 +1,68 @@
+{
+  "collection": false,
+  "getterNames": [
+    "delegate",
+    "boundSql",
+    "parameterHandler"
+  ],
+  "objectFactory": {},
+  "objectWrapper": {
+    "collection": false,
+    "getterNames": [
+      "delegate",
+      "boundSql",
+      "parameterHandler"
+    ],
+    "setterNames": [
+      "delegate"
+    ]
+  },
+  "objectWrapperFactory": {},
+  "originalObject": {
+    "boundSql": {
+      "parameterMappings": [
+        {
+          "javaType": "java.lang.String",
+          "mode": "IN",
+          "property": "code",
+          "typeHandler": {
+            "rawType": "java.lang.String"
+          }
+        },
+        {
+          "javaType": "java.lang.String",
+          "mode": "IN",
+          "property": "name",
+          "typeHandler": {
+            "$ref": "$.originalObject.boundSql.parameterMappings[0].typeHandler"
+          }
+        },
+        {
+          "javaType": "java.lang.String",
+          "mode": "IN",
+          "property": "status",
+          "typeHandler": {
+            "$ref": "$.originalObject.boundSql.parameterMappings[0].typeHandler"
+          }
+        }
+      ],
+      "parameterObject": {
+        "code": "1111",
+        "name": "alice",
+        "status": "00"
+      },
+      "sql": "INSERT INTO user  ( code,\nname,\n\n\n\n\n\nstatus )  VALUES  ( ?,\n?,\n\n\n\n\n\n? )"
+    },
+    "parameterHandler": {
+      "parameterObject": {
+        "$ref": "$.originalObject.boundSql.parameterObject"
+      }
+    }
+  },
+  "reflectorFactory": {
+    "classCacheEnabled": true
+  },
+  "setterNames": [
+    "delegate"
+  ]
+}
