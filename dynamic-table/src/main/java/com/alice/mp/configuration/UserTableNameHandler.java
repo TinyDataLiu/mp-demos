@@ -20,8 +20,10 @@ public class UserTableNameHandler implements ITableNameHandler {
 
     private final static List<String> exits = new ArrayList<>();
     //直接传入 通过ThreadLocal 来进行动态分配
+    //通过调用放手动设置
     public static ThreadLocal<String> SUFFIX = new ThreadLocal<>();
 
+    //用于初始化
     static {
         exits.add("201901");
         exits.add("201902");
@@ -32,6 +34,7 @@ public class UserTableNameHandler implements ITableNameHandler {
 
     @Override
     public String dynamicTableName(MetaObject metaObject, String sql, String tableName) {
+        //如果未设置，或者分片表不存在则，直接使用 默认表
         if (StringUtils.isNotBlank(SUFFIX.get()) && exits.contains(SUFFIX.get())) {
             tableName = tableName + "_" + SUFFIX.get();
         }
